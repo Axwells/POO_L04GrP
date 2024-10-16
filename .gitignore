@@ -1,6 +1,7 @@
 ## Custom
 *.txt
 *.bin
+._*
 
 ## IntelliJ IDEA
 
