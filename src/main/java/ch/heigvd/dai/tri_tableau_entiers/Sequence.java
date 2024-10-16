@@ -18,8 +18,10 @@ public class Sequence {
 
             for (int j = 0; j < n - i - 1; j++) {
                 if (seq[j].getValue() > seq[j + 1].getValue()) {
-                    //ALSO WORKS IntClass.swapTabElements(seq, j + 1, j);
-                    IntClass.swapValues(seq[j], seq[j + 1]);
+                    /* Solution below work too
+                    IntClass.swapTabElements(seq, j + 1, j);
+                    IntClass.swapValues(seq[j], seq[j + 1]);*/
+                    seq[j].swapValues(seq[j + 1]);
                     swapped = true;
                 }
             }
