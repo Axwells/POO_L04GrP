@@ -1,9 +1,11 @@
 package ch.heigvd.dai.tri_tableau_entiers;
 
-public class Sequence {
-    private int[] seq;
+import ch.heigvd.dai.intClass.IntClass;
 
-    public Sequence(int[] seq) {
+public class Sequence {
+    private IntClass[] seq;
+
+    public Sequence(IntClass[] seq) {
         this.seq = seq;
     }
 
@@ -15,10 +17,9 @@ public class Sequence {
             swapped = false;
 
             for (int j = 0; j < n - i - 1; j++) {
-                if (seq[j] > seq[j + 1]) {
-                    int temp = seq[j];
-                    seq[j] = seq[j + 1];
-                    seq[j + 1] = temp;
+                if (seq[j].getValue() > seq[j + 1].getValue()) {
+                    //ALSO WORKS IntClass.swapTabElements(seq, j + 1, j);
+                    IntClass.swapValues(seq[j], seq[j + 1]);
                     swapped = true;
                 }
             }
@@ -28,8 +29,8 @@ public class Sequence {
 
     public String toString() {
         String s = new String("Sequence : ");
-        for (int j : seq) {
-            s += j + " ";
+        for (IntClass j : seq) {
+            s += j.getValue() + " ";
         }
         return s;
     }
